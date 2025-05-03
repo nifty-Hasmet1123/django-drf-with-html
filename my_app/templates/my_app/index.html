@@ -1,0 +1,24 @@
+{% extends "my_app/base.html" %}
+
+{% block content %}
+   
+    <h1>Owners</h1>
+
+    {% if owners %}
+        <table>
+            <tr>
+                <th>User ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+            {% for owner in owners %}
+            <tr>
+                <td>{{ owner.user_id }}</td>
+                <td>{{ owner.first_name }}</td>
+                <td>{{ owner.last_name }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+
+{% endblock  %}
