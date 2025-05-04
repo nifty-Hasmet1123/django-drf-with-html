@@ -2,7 +2,7 @@
 
 {% block content %}
    
-    <h1>Owners</h1>
+    {% comment %} <h1>Owners</h1>
 
     {% if owners %}
         <table>
@@ -19,6 +19,12 @@
             </tr>
             {% endfor %}
         </table>
-    {% endif %}
+    {% endif %} {% endcomment %}
 
+    <h2>Custom Login</h2>
+    <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+    </form>
 {% endblock  %}

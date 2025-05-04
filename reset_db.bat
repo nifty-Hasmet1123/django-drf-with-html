@@ -1,0 +1,3 @@
+@echo off
+echo Resetting the database...
+psql -d asset_db -U postgres -f reset_app.sql
